@@ -24,7 +24,6 @@ const Timer = () => {
  
  useEffect(() => {
     let interval = null;
-    console.log(time);
     if(time){
       interval = setInterval(() => setSeconds(seconds + 1), 1000);
       if (seconds === 60) {
