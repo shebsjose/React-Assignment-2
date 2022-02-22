@@ -4,9 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.css";
+import { createStore} from 'redux';
+import {Provider} from 'react-redux'
+import UserReducer from './Reducer/UserReducer';
+
+const store = createStore(UserReducer)
 
 ReactDOM.render(
-  <App />,
+  <Provider store ={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 

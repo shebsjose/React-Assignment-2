@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import {connect} from 'react-redux'
 
-const CountButton = () => {
+const CountButton = (props) => {
    const[count, setCount] = useState(0);
 
    const handleClick = () =>{
@@ -14,8 +15,13 @@ const CountButton = () => {
             >
                 Increment
             </button>
+            <h4>{props.user.name}</h4>
         </div>
      );
 }
+
+const mapStateToProps = state =>({
+    user : state
+})
  
-export default CountButton;
+export default connect(mapStateToProps) (CountButton);
